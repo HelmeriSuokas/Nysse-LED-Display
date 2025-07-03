@@ -1,2 +1,1 @@
-Opiskelija A
-7 min
+lines = ["Testing", "Matrix OK"]
