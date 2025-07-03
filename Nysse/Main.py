@@ -24,8 +24,27 @@ headers = {
 target_stop_id = "0831"
 
 # käynnistää display.py
-script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Display.py")
-subprocess.Popen([sys.executable, script_path])
+# script_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), "Display.py")
+# subprocess.Popen([sys.executable, script_pa
+
+# Full path to ratikka.py in samples folder!
+ratikka_path = "ratikka.py"
+cmd = [
+    "sudo", "python3", ratikka_path,
+    "--led-cols=64",
+    "--led-rows=32",
+    "--led-chain=1",
+    "--led-parallel=1",
+    "--led-scan-mode=0",
+    "--led-brightness=70",
+    "--led-pwm-bits=8",
+    "--led-gpio-mapping=adafruit-hat",
+    "--led-slowdown-gpio=4"
+]
+subprocess.Popen(
+    cmd,
+    cwd="/home/hemme/rpi-rgb-led-matrix/bindings/python/samples"
+)
 
 # GTFS tiedot
 stops = pd.read_csv("stops.txt", dtype=str)
