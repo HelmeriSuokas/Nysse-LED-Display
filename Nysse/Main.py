@@ -72,13 +72,14 @@ def hae_seuraava_ratikka():
 
         for stu in tu.stop_time_update:
             if stu.stop_id == target_stop_id and stu.HasField("departure"):
-                departure_time = datetime.datetime.fromtimestamp(stu.departure.time)
+                departure_time = datetime.datetime.utcfromtimestamp(stu.departure.time) + datetime.timedelta(hours=3)
                 upcoming.append((departure_time, "???"))
 
     return sorted(upcoming)
 
 # tuloste loopattuna
 while True:
+
     next_departures = hae_seuraava_ratikka()
 
     if next_departures:
@@ -93,7 +94,7 @@ while True:
             next_dep_time, route_name = valid_departures[0]
             aikaero = (next_dep_time - now).total_seconds() / 60
 
-            with open("ratikka_info.txt", "w") as f:
+            with open("/tmp/ratikka_info.txt", "w") as f:
                 if aikaero < 1:
                     f.write("Meni jo")
                 else:
