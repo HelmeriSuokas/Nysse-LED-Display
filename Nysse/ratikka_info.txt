@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 Opiskelija A
 6 min
+=======
+lines = ["Testing", "Matrix OK"]
+>>>>>>> b4515556fafee27445455ae4df8c1b57f87bbc0d

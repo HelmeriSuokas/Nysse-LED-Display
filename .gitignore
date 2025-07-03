@@ -1,0 +1,12 @@
+# IDE settings
+.idea/
+
+# Python virtual environments
+.venv/
+
+# Bytecode and cache
+__pycache__/
+*.pyc
+
+# Local runtime files
+ratikka_info.txt
