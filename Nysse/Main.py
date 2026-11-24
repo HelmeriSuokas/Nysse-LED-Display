@@ -7,8 +7,8 @@ from google.transit import gtfs_realtime_pb2
 
 
 # tunnarit
-client_id = "1433101575045228"
-client_secret = "UctF12ni9eEew9Dk6EIUMpqdjAX5t4Py"
+client_id = "-"
+client_secret = "-"
 
 # auth
 credentials = f"{client_id}:{client_secret}"
